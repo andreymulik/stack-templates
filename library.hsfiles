@@ -1,0 +1,120 @@
+{-# START_FILE {{name}}.cabal #-}
+name:          {{name}}
+version:       0.0.0.0
+category:      {{category}}{{^category}}Data Structures{{/category}}
+
+synopsis:      See README.md
+description:   See README.md
+
+author:        {{author-name}}{{^author-name}}Author name here{{/author-name}}
+maintainer:    {{author-email}}{{^author-email}}example@example.com{{/author-email}}
+bug-reports:   https://{{repo-name}}{{^repo-name}}github.com{{/repo-name}}/{{git-user}}{{^git-user}}username{{/git-user}}/{{name}}/issues
+homepage:      https://{{repo-name}}{{^repo-name}}github.com{{/repo-name}}/{{git-user}}{{^git-user}}username{{/git-user}}/{{name}}#readme
+
+copyright:     {{copyright}}{{^copyright}}{{year}}{{^year}}2019{{/year}} {{author-name}}{{^author-name}}Author name here{{/author-name}}{{/copyright}}
+license:       {{license}}{{^license}}BSD3{{/license}}
+license-file:  LICENSE
+
+cabal-version: >=1.10
+build-type:    Simple
+
+extra-source-files:
+  README.md
+
+source-repository head
+  type: git
+  location: https://{{repo-name}}{{^repo-name}}github.com{{/repo-name}}/{{git-user}}{{^git-user}}username{{/git-user}}/{{name}}
+
+---            _      _____ ______ ______   ___  ______ __   __              ---
+---           | |    |_   _|| ___ \| ___ \ / _ \ | ___ \\ \ / /              ---
+---           | |      | |  | |_/ /| |_/ // /_\ \| |_/ / \ V /               ---
+---           | |      | |  | ___ \|    / |  _  ||    /   \ /                ---
+---           | |____ _| |_ | |_/ /| |\ \ | | | || |\ \   | |                ---
+---           \_____/ \___/ \____/ \_| \_|\_| |_/\_| \_|  \_/                ---
+
+Library
+  default-language: Haskell2010
+  hs-source-dirs:   src
+  ghc-options:      -O2 -Wall -Wcompat
+  
+  build-depends:
+    base >= 4.9 && < 5
+  
+  exposed-modules:
+    -- some modules here
+
+
+{-# START_FILE Setup.hs #-}
+import Distribution.Simple
+main = defaultMain
+
+{-# START_FILE README.md #-}
+# {{name}}
+
+Short description here
+
+## Motivation
+
+A few words about why this package was needed, to whom and why it will be useful.
+
+## Description
+
+Description here
+
+## Versions
+
+`{{name}}` follow [Haskell Package Versioning Policy](https://pvp.haskell.org).
+
+## Contributing
+For details of the process for submitting pull requests, please read
+`CONTRIBUTING.md`.
+
+## License
+
+License info here
+
+{-# START_FILE LICENSE #-}
+Copyright {{author-name}}{{^author-name}}Author name here{{/author-name}} (c) {{year}}{{^year}}2019{{/year}}
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above
+      copyright notice, this list of conditions and the following
+      disclaimer in the documentation and/or other materials provided
+      with the distribution.
+
+    * Neither the name of {{author-name}}{{^author-name}}Author name here{{/author-name}} nor the names of other
+      contributors may be used to endorse or promote products derived
+      from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+{-# START_FILE .gitignore #-}
+*.tar.gz
+*~
+.*
+--*
+
+.stack-work/
+stack.yaml*
+index.html
+TODO*
+
+!.gitignore
+
